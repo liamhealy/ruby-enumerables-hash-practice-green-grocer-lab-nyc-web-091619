@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
         # end
       else #if cart["#{item_name} W/COUPON"]
       # If we have applied this coupon before
-        if cart["#{item_name} W/COUPON"][:count] < element[:num]
+        if cart[item_name][:count] < element[:num]
           # Do nothing...
           # cart["#{item_name} W/COUPON"][:count] += element[:num]
           # cart[item_name][:count] -= element[:num]
