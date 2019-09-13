@@ -32,6 +32,9 @@ def apply_coupons(cart, coupons)
             :count => element[:num]
           }
         end
+      elsif cart["#{item_name} W/COUPON"]
+      # If we have applied this coupon before
+        cart["#{item_name} W/COUPON"][:count] += element[:num]
       end
     end
   end
