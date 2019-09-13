@@ -21,9 +21,9 @@ def apply_coupons(cart, coupons)
     item_name = element[:item]
     if cart[item_name]
     # If the item is in the cart
-      if cart[item_name][:count] >= element[:num]
+      if cart[item_name][:count] >= element[:num] and !cart["#{item_name} W/COUPON"]
       # If the # of item in cart is greater than or = what the coupon counts for  
-        if !cart["#{item_name} W/COUPON"]
+        # if !cart["#{item_name} W/COUPON"]
         # If we havent applied coupons for this item before
           cart[item_name][:count] -= element[:num]
           cart["#{item_name} W/COUPON"] = {
